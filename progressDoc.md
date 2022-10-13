@@ -1,12 +1,11 @@
 # Individual Quiz Data Project
 Center for Instructional Design and Innovation - Utah State University
-* Created by Emma Lynn (a02391851@usu.edu, emmaruthlynn@gmail.com)
+* Created by Emma Lynn (a02391851@usu.edu)
 * Supervised by Neal Legler, CIDI Director (neal.legler@usu.edu)
 * On request from Justin Heavilin, Math Dept. (justin.heavilin@usu.edu)
 
 
-### Summary
-TODO: Fill this in
+**_Documentation of progress on the project, if anyone is interested_**
 
 ## Project Goals
 * Generate a report for each attempt for each student of their score and time they took to take the quiz
@@ -23,8 +22,6 @@ TODO: Fill this in
         * Time spent
         * Score
 
-### Current limitations:
-* Hmm
 
 ## Progress Report
 
@@ -183,6 +180,7 @@ Results will be contained in quizData.csv file.
 * Got it working to display correct data from all the quizzes
 * Fixed a bug that left off one attempt from every quiz
 * Finished first draft of usage docs
+* Added to clean repo
 
 
 ## TODO:
@@ -205,8 +203,18 @@ Where:
 * q is number of quizzes in a course
 * a is the number of attempts made for one student
 
-### baseAPICall.py ~~apiCall3.py~~
-#### 10.6.22 (Initial - Trying to get stats quiz tiny data): 
+### Current implementation
+#### 10.13.22
+
+    1.29s user 0.65s system 6% cpu 29.394 total
+* It's kind of slow, but I don't know if there's much I can do about it, since it's really just the API calls
+* 30 seconds for 18 students and 3 (active) quizzes
+  * Estimation: .556 seconds * (number of students * number of quizzes in course)
+
+### Old implementation
+
+#### baseAPICall.py ~~apiCall3.py~~
+##### 10.6.22 (Initial - Trying to get stats quiz tiny data): 
 
     0.03s user 0.01s system 10% cpu 0.452 total
 * There's not so much that I think really can be done here. The only thing that would slow it down is that API call and we need to have that.
@@ -214,14 +222,14 @@ Where:
   * One API call per quiz
 * O(1) complexity (except maybe the API call)
 
-#### 10.11.22 (Aggregate quiz data project - more data):
+##### 10.11.22 (Aggregate quiz data project - more data):
     
     0.05s user 0.02s system 11% cpu 0.573 total
 
 * No significant difference in performance (also, will not change based of problem size - O(1))
 
-### mainAPICall.py ~~apiCall4.py~~
-#### 10.6.22 (Initial - Trying to get stats quiz tiny data): 
+#### mainAPICall.py ~~apiCall4.py~~
+##### 10.6.22 (Initial - Trying to get stats quiz tiny data): 
 
     0.22s user 0.10s system 6% cpu 4.660 total
 * This could be a longer one because the time is going to be directly related to the amount of API calls made.
@@ -245,7 +253,7 @@ Where:
 * There's not really a noticeable difference now since my data's so small but I think that will be beneficial as the problem size increases.
 * Still O(sa) complexity, but we've cut down on an additional O(s)
 
-#### 10.11.22 (Aggregate quiz data project - more data):
+##### 10.11.22 (Aggregate quiz data project - more data):
     
     0.51s user 0.23s system 6% cpu 11.987 total
 
@@ -255,10 +263,10 @@ Where:
 * This example had 30 attempts and 18 students, which means that on average runtime will probably take (.4 * num of attempts) seconds or (.667 * num of students) seconds
   * Which is not ideal, that could get pretty slow, but there's nothing I can really do about it I don't think.
 
-### generateReport.py ~~interpreting_data.py~~
-#### (Contains calls to parseData.py ~~parseJSON.py~~, Student.py, and LetterGrade.py)
+#### generateReport.py ~~interpreting_data.py~~
+##### (Contains calls to parseData.py ~~parseJSON.py~~, Student.py, and LetterGrade.py)
 
-#### 10.6.22 (Initial - Trying to get stats quiz tiny data): 
+##### 10.6.22 (Initial - Trying to get stats quiz tiny data): 
 
     0.02s user 0.01s system 89% cpu 0.034 total
 * This is probably the most complex call to analyze complexity for, but I doubt it will take longer than the previous API calls
@@ -289,7 +297,7 @@ Where:
     * getAvgNumAttempts() from LetterGrade.py - O(s in letter grade)
 * O(sa) complexity
 
-#### 10.11.22 (Aggregate quiz data project - more data):
+##### 10.11.22 (Aggregate quiz data project - more data):
     
     0.02s user 0.01s system 89% cpu 0.034 total
 

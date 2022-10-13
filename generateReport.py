@@ -1,7 +1,6 @@
 import os
 import sys
 import Student
-import LetterGrade
 import csv
 from getAllData import getAllQuizIDs
 from parseData import getStudents
