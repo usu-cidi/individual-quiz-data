@@ -11,8 +11,9 @@ This repository contains the code necessary to generate a report showing student
 ## Start here!
 In these instructions, I will walk you through the entire process of running this program to generate your course data.
 We will be running the program using the Command Line. When I give you a command to run, it will look like this:
-
-    $ COMMAND
+```
+$ COMMAND
+```
 You should not include the $ symbol in the commands you type, that should already display on your command line prompt. Press enter on your keyboard to run the commands once they have been entered.
 
 Commands may or may not display text on the command line. Do not worry if some commands do not display output.
@@ -22,25 +23,28 @@ Commands may or may not display text on the command line. Do not worry if some c
 First you will need to get a copy of this project onto your computer.
 * Navigate to the Launchpad and open the Terminal application
 * Navigate to your Desktop with the following command
-
-      $ cd Desktop
+```
+$ cd Desktop
+```
   * If you would like to place this in a folder or different place on your computer, replace Desktop in the command with the file path (ex. Desktop/School/CourseData). If this is confusing, don't worry about it. You can always move the folder later.
 * Run the following commands
-
-      $ git clone https://github.com/emmmalynnn/cidi-aggregate-quiz-data.git quiz_data_script
-      $ cd quiz_data_script
+```commandline
+$ git clone https://github.com/emmmalynnn/cidi-aggregate-quiz-data.git quiz_data_script
+$ cd quiz_data_script
+```
 Now we need to set up your environment with your specific settings.
   *  Run the following command
-
-
-        $ nano setUp.env
+```commandline
+$ nano setUp.env
+```
 
   *  Your command line has now been turned into a simple text editor. Copy the text below and paste into the file, filling in your information.
-  
+  ```commandline
+CANVAS_API_TOKEN=token
+COURSE_ID=course-id
+STUDENTS_IN_COURSE=upper-limit-of-students
+```
 
-        CANVAS_API_TOKEN=token
-        COURSE_ID=course-id
-        STUDENTS_IN_COURSE=upper-limit-of-students
 * token should be replaced with your personal API key. If you don't have one, see the bottom of this page.
 * course-id should be replaced with the id number for your course. It can be found by navigating to the home page of your course on canvas and copying the last part of the url:
   * https://usu.instructure.com/courses/718488
@@ -53,20 +57,20 @@ Now we need to set up your environment with your specific settings.
 * Once you have correctly filled in the text, press _^X_ on your keyboard, followed by the _y_ key, and then the enter key
 
 * Run the following command:
-
-
-        $ mv setUp.env .env
+```commandline
+$ mv setUp.env .env
+```
 
 * Your environment has now been set up!
 
 Running the program:
 
 Run the following command:
-
-
-        $ python generateReport.py
+```commandline
+$ python generateReport.py
+```
 * The program will now begin running. Depending on the amount of students and quizzes in your course, it may take a while because of all the neccesary API calls.
-  * My estimation is FILL THIS IN
+  * My estimation is that it will take about .556 * (number of students * number of quizzes) seconds to run
 * When the program is complete, the generated file should be opened in your default .csv application
 
 ## Bug Reports
