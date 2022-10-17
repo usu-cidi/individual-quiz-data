@@ -11,9 +11,14 @@ quizIDs = getAllQuizIDs()
 fields = ["Student", "ID", "SIS User ID", "SIS Login ID", "Email", "Quiz", "Score", "Attempt", "Time"]
 rows = []
 
+allTheStudents = {}
+
 for quiz in quizIDs:
-    students = getStudents(str(quiz))
-    if students != None:
+    print(quiz)
+    callResult = getStudents(str(quiz), allTheStudents)
+    if callResult != None:
+        students = callResult[0]
+        allTheStudents = callResult[1]
         for student in students:
             for attempt in range(0, students[student].getNumAttempts()):
                 rowToAdd = [students[student].getName(), students[student].getCanvasID(),

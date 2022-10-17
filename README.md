@@ -35,7 +35,7 @@ $ cd quiz_data_script
 Now we need to set up your environment with your specific settings.
   *  Run the following command
 ```commandline
-$ nano setUp.env
+$ nano .env
 ```
 
   *  Your command line has now been turned into a simple text editor. Copy the text below and paste into the file, filling in your information.
@@ -56,11 +56,6 @@ STUDENTS_IN_COURSE=upper-limit-of-students
 
 * Once you have correctly filled in the text, press _^X_ on your keyboard, followed by the _y_ key, and then the enter key
 
-* Run the following command:
-```commandline
-$ mv setUp.env .env
-```
-
 * Your environment has now been set up!
 
 Running the program:
@@ -70,7 +65,7 @@ Run the following command:
 $ python generateReport.py
 ```
 * The program will now begin running. Depending on the amount of students and quizzes in your course, it may take a while because of all the neccesary API calls.
-  * My estimation is that it will take about .556 * (number of students * number of quizzes) seconds to run
+  * My estimation is that it will take about .487 * (number of students * number of quizzes) seconds to run
 * When the program is complete, the generated file should be opened in your default .csv application
 
 ## Bug Reports

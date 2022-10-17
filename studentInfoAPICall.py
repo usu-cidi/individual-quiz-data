@@ -9,7 +9,7 @@ TOKEN = os.environ.get('CANVAS_API_TOKEN')
 BASEURL = 'https://usu.instructure.com'
 
 
-def getStudentData():
+def getStudentData(allTheStudents):
     file = open("canvasData.txt")
     resultOfAPICall1 = file.read()
     file.close()
@@ -19,12 +19,18 @@ def getStudentData():
     studentData = ""
 
     for student in quizBlocks:
-        requestURL = BASEURL + "/api/v1/users/" + str(student["user_id"])
+        if not student["user_id"] in allTheStudents:
+            requestURL = BASEURL + "/api/v1/users/" + str(student["user_id"])
 
-        shellCommand = f'curl {requestURL} -H "Authorization: Bearer {TOKEN}"'
+            shellCommand = f'curl {requestURL} -H "Authorization: Bearer {TOKEN}"'
 
-        oneStudent = os.popen(shellCommand)
-        studentData += oneStudent.read()
-        oneStudent.close()
+            oneStudent = os.popen(shellCommand)
+            readStudent = oneStudent.read()
+            studentData += readStudent
+            allTheStudents[student["user_id"]] = readStudent
+            oneStudent.close()
+        else:
+            studentData += allTheStudents[student["user_id"]]
 
-    return studentData
+    toReturn = (studentData, allTheStudents)
+    return toReturn

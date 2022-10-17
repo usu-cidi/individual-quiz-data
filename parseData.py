@@ -5,7 +5,7 @@ import Student
 from mainAPICall import getAttemptData
 
 
-def getStudents(quizID):
+def getStudents(quizID, allTheStudents):
     f = open("canvasData.txt", "w")
     f.write("")
     f.close()
@@ -14,7 +14,9 @@ def getStudents(quizID):
 
     from studentInfoAPICall import getStudentData
 
-    resultOfAPICall3 = getStudentData()
+    callResult = getStudentData(allTheStudents)
+    resultOfAPICall3 = callResult[0]
+    allTheStudents = callResult[1]
 
     f = open("canvasData.txt", "w")
     f.write("")
@@ -25,7 +27,7 @@ def getStudents(quizID):
 
     studentObjs = {}
 
-    # For student data
+    # for student data
     for student in range(0, len(studentInfo)):
         if not student == 0:
             studentInfo[student] = "{" + studentInfo[student]
@@ -53,6 +55,7 @@ def getStudents(quizID):
             if (thisID in studentObjs):
                 studentObjs[thisID].addAttempt(forInParsedAttempts[0], "testQuiz")
 
-    return studentObjs
+    toReturn = (studentObjs, allTheStudents)
+    return toReturn
 
 
