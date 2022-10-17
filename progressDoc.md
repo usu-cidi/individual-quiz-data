@@ -182,21 +182,33 @@ Results will be contained in quizData.csv file.
 * Finished first draft of usage docs
 * Added to clean repo
 
+### 10.17.22
+* Added a dictionary to keep track of student data that has already been retrieved to minimize API calls
+  * Updated time complexity docs
+  
+* Tested on an actual calc 1 course: 707454
+```commandline
+5.05s user 2.41s system 6% cpu 1:58.33 total
+```
+  Follows time to run estimation pretty well
+
+* Also tested on course 711908
+```commandline
+6.54s user 3.22s system 6% cpu 2:34.77 total
+```
+Was actually much faster than my estimation, I think it was probably because students were only allowed one attempt on every quiz. That's maybe something to factor into my time approximation in the future.
+
 
 ## TODO:
 
 * Test with big data
 * Figure out easy way for faculty to set up environment
-  * Finish figuring out dotenv
-* Create usage documentation
-* Make a plan for easy set up
-* Test runtime again - make estimation for number of students and number of quizzes in course
 * Support for Windows/Linux
 
 
 
 ## Runtime optimization:
-*Using time command line argument to measure runtime*
+Using command line argument *time* to measure runtime
 
 Where:
 * s is number of students in a course
@@ -210,6 +222,13 @@ Where:
 * It's kind of slow, but I don't know if there's much I can do about it, since it's really just the API calls
 * 30 seconds for 18 students and 3 (active) quizzes
   * Estimation: .556 seconds * (number of students * number of quizzes in course)
+  
+#### 10.17.22
+```commandline
+1.20s user 0.59s system 6% cpu 26.341 total
+```
+* After removing repeat API calls for student data- doesn't make as much of an impact on my data, but in general I think it will help a lot
+* New estimation: .487 seconds * (number of students * number of quizzes)
 
 ### Old implementation
 
