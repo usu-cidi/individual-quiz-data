@@ -80,7 +80,7 @@ nano .env
 ## Bug Reports
 If something behaves unexpectedly or you run into a problem with the program, please let me know.
 
-Send bug reports to A02391851@usu.edu with the subject line "Bug Report - Individual Quiz Data".
+Send bug reports to a02391851@usu.edu with the subject line "Bug Report - Individual Quiz Data".
 
 Please include:
 * What you expected to happen
