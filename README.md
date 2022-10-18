@@ -16,22 +16,20 @@ $ COMMAND
 ```
 You should not include the $ symbol in the commands you type, that should already display on your command line prompt. Press enter on your keyboard to run the commands once they have been entered.
 
-Commands may or may not display text on the command line. Do not worry if some commands do not display output.
+Commands may or may not output text. Do not worry if some commands do not display anything.
 
 ### Instructions
 
 First you will need to get a copy of this project onto your computer.
+
+* Click the green Code button on GitHub. In the dropdown, click Download ZIP
+
 * Navigate to the Launchpad and open the Terminal application
-* Navigate to your Desktop with the following command
+* Navigate to the downloaded project with the following command
 ```
-$ cd Desktop
+$ cd Downloads/cidi-individual-quiz-data-master
 ```
-  * If you would like to place this in a folder or different place on your computer, replace Desktop in the command with the file path (ex. Desktop/School/CourseData). If this is confusing, don't worry about it. You can always move the folder later.
-* Run the following commands
-```commandline
-$ git clone https://github.com/emmmalynnn/cidi-aggregate-quiz-data.git quiz_data_script
-$ cd quiz_data_script
-```
+
 Now we need to set up your environment with your specific settings.
   *  Run the following command
 ```commandline
@@ -47,8 +45,7 @@ STUDENTS_IN_COURSE=upper-limit-of-students
 
 * token should be replaced with your personal API key. If you don't have one, see the bottom of this page.
 * course-id should be replaced with the id number for your course. It can be found by navigating to the home page of your course on canvas and copying the last part of the url:
-  * https://usu.instructure.com/courses/718488
-  * 718488 is the course ID
+  * For example, if your course URL is https://usu.instructure.com/courses/123456, 123456 is the course ID
 * upper-limit-of-students should be replaced with a rough estimate of number of students in your course. It is fine if it is greater than the number of students in the course, but should not be less.
 
 * _A note: the terminal is an entirely text based application, thus you won't be able to navigate the text with your mouse, you will need to use the arrows on the keyboard._
@@ -56,17 +53,28 @@ STUDENTS_IN_COURSE=upper-limit-of-students
 
 * Once you have correctly filled in the text, press _^X_ on your keyboard, followed by the _y_ key, and then the enter key
 
+
+* Now, run the following command:
+```commandline
+$ pip3 install python-dotenv --user
+```
+
 * Your environment has now been set up!
 
 Running the program:
 
 Run the following command:
 ```commandline
-$ python generateReport.py
+$ python3 generateReport.py
 ```
 * The program will now begin running. Depending on the amount of students and quizzes in your course, it may take a while because of all the neccesary API calls.
-  * My estimation is that it will take about .487 * (number of students * number of quizzes) seconds to run
+  * My estimation is that it will take around .55 * (number of students * number of quizzes) seconds to run, depending on the number of attempts students are making on the quizzes
 * When the program is complete, the generated file should be opened in your default .csv application
+
+If you would like to run the program again for a different course, repeat the above steps, beginning at the command:
+```commandline
+$ nano .env
+```
 
 ## Bug Reports
 If something behaves unexpectedly or you run into a problem with the program, please let me know.
