@@ -12,28 +12,32 @@ This repository contains the code necessary to generate a report showing student
 In these instructions, I will walk you through the entire process of running this program to generate your course data.
 We will be running the program using the Command Line. When I give you a command to run, it will look like this:
 ```
-$ COMMAND
+COMMAND
 ```
-You should not include the $ symbol in the commands you type, that should already display on your command line prompt. Press enter on your keyboard to run the commands once they have been entered.
+Press enter on your keyboard to run the commands once they have been entered.
 
 Commands may or may not output text. Do not worry if some commands do not display anything.
+
+* _A note: the terminal is an entirely text based application, so you won't be able to navigate the text with your mouse, you will need to use the arrows on the keyboard._
+
 
 ### Instructions
 
 First you will need to get a copy of this project onto your computer.
 
-* Click the green Code button on GitHub. In the dropdown, click Download ZIP
+* Navigate to the Launchpad and open the Terminal application on your computer.
 
-* Navigate to the Launchpad and open the Terminal application
-* Navigate to the downloaded project with the following command
+* On GitHub, click the green Code button. In the dropdown, click Download ZIP.
+* Unwrap the ZIP file.
+* Navigate to the downloaded project with the following command.
 ```
-$ cd Downloads/cidi-individual-quiz-data-master
+cd Downloads/cidi-individual-quiz-data-master
 ```
 
 Now we need to set up your environment with your specific settings.
-  *  Run the following command
+  *  Run the following command:
 ```commandline
-$ nano .env
+nano .env
 ```
 
   *  Your command line has now been turned into a simple text editor. Copy the text below and paste into the file, filling in your information.
@@ -48,15 +52,12 @@ STUDENTS_IN_COURSE=upper-limit-of-students
   * For example, if your course URL is https://usu.instructure.com/courses/123456, 123456 is the course ID
 * upper-limit-of-students should be replaced with a rough estimate of number of students in your course. It is fine if it is greater than the number of students in the course, but should not be less.
 
-* _A note: the terminal is an entirely text based application, thus you won't be able to navigate the text with your mouse, you will need to use the arrows on the keyboard._
-
-
-* Once you have correctly filled in the text, press _^X_ on your keyboard, followed by the _y_ key, and then the enter key
+* Once you have correctly filled in the text, press _CTRL + X_ on your keyboard, followed by the _y_ key, and then the enter key.
 
 
 * Now, run the following command:
 ```commandline
-$ pip3 install python-dotenv --user
+pip3 install python-dotenv --user
 ```
 
 * Your environment has now been set up!
@@ -65,7 +66,7 @@ Running the program:
 
 Run the following command:
 ```commandline
-$ python3 generateReport.py
+python3 generateReport.py
 ```
 * The program will now begin running. Depending on the amount of students and quizzes in your course, it may take a while because of all the neccesary API calls.
   * My estimation is that it will take around .55 * (number of students * number of quizzes) seconds to run, depending on the number of attempts students are making on the quizzes
@@ -73,7 +74,7 @@ $ python3 generateReport.py
 
 If you would like to run the program again for a different course, repeat the above steps, beginning at the command:
 ```commandline
-$ nano .env
+nano .env
 ```
 
 ## Bug Reports
