@@ -86,7 +86,7 @@ Please include:
 * What actually happened
 * As much output from the terminal as possible - copy and pasted, not in a screenshot
 * Your course ID (and specific quiz ID, if applicable)
-* What OS you're using (Windows, Mac, etc)
+* What OS you're using (Windows, Mac)
 * Any other information that you think could be useful
 
 I will get back to you with an update, most likely within 2 business days. Thank you.

@@ -199,11 +199,18 @@ Results will be contained in quizData.csv file.
 Was actually much faster than my estimation, I think it was probably because students were only allowed one attempt on every quiz. That's maybe something to factor into my time approximation in the future.
 
 
-## TODO:
+### 10.18.22
+* Tested on one of Justin Heavilin's courses (707503)
+```commandline
+17.58s user 9.27s system 6% cpu 7:15.64 total
+```
+This was a lot bigger of a data set, but still wasn't terrible.
+My current estimation was a little off, a better one for this larger data would probably be .604 * (students * quizzes)
 
-* Test with big data
-* Figure out easy way for faculty to set up environment
-* Support for Windows/Linux
+
+
+## TODO:
+* Test on Windows/Linux
 
 
 
