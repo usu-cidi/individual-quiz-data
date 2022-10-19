@@ -29,6 +29,7 @@ allTheStudents = {}
 
 for quiz in quizIDs:
     print(quiz)
+    print(f"quiz: {quiz}")
     callResult = getStudents(str(quiz), allTheStudents)
     if callResult != None:
         students = callResult[0]
@@ -40,6 +41,8 @@ for quiz in quizIDs:
                             students[student].getEmail(), quizIDs[quiz], students[student].getScore(attempt),
                             attempt + 1, students[student].getTimeSpent(attempt)]
                 rows.append(rowToAdd)
+
+    print(f"Output: {rows}")
 
 outFile = "quizData.csv"
 
