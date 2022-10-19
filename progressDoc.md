@@ -207,12 +207,39 @@ Was actually much faster than my estimation, I think it was probably because stu
 This was a lot bigger of a data set, but still wasn't terrible.
 My current estimation was a little off, a better one for this larger data would probably be .604 * (students * quizzes)
 
+### 10.19.22
+* Received and worked on resolving bug report 0
 
 
 ## TODO:
 * Test on Windows/Linux
+* Figure out curl error
+* Resolve bug report 0
+* Implement Neal's suggestions for usage docs
+  * Add to bug report section: include canvasData.txt if has been created
+* Add more helpful output for if it crashes, include in a canvasData.txt format
 
+## Bug reports / maintenance
 
+### 0 - Student's attributes are None?
+10.19.22
+Reported by Neal Legler through Slack
+```buildoutcfg
+curl: (3) URL using bad/illegal format or missing URL
+Traceback (most recent call last):
+  File "/Users/neallegler/Downloads/cidi-individual-quiz-data-master/generateReport.py", line 32, in <module>
+    callResult = getStudents(str(quiz), allTheStudents)
+  File "/Users/neallegler/Downloads/cidi-individual-quiz-data-master/parseData.py", line 27, in getStudents
+    resultOfAPICall2 = getAttemptData(quizID)
+  File "/Users/neallegler/Downloads/cidi-individual-quiz-data-master/mainAPICall.py", line 33, in getAttemptData
+    for attempt in range(0, student["attempt"]):
+TypeError: 'NoneType' object cannot be interpreted as an integer
+MacBook-Pro-2:cidi-individual-quiz-data-master neallegler$ python generateReport.py
+-bash: python: command not found
+```
+Problem with 710410, crashed on quiz 1026042
+* I believe that it is an issue with students who have not attempted the quiz being included in the report. I implemented a fix in mainAPICall.py that should have fixed it. Currently testing.
+* It is working on my machine with a smaller subset of data. Tomorrow when I have time, I will run it with the whole thing. I will also ask Neal to try it again with the fixes.
 
 ## Runtime optimization:
 Using command line argument *time* to measure runtime

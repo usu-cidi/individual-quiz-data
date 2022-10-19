@@ -41,7 +41,7 @@ quizData.close()
 #^^ real code to restore
 
 #test a limited amount of quizzes
-allTheQuizzes = {"1026042": "problem child"}
+allTheQuizzes = {"1026596": "another one", "1026042": "problem child", "1026036": "test again"}
 
 def getAllQuizIDs():
     return allTheQuizzes
