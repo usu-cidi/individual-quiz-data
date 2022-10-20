@@ -215,6 +215,7 @@ My current estimation was a little off, a better one for this larger data would 
 * Implemented Neal's suggestions for the usage docs
 * Fixed curl: (3) URL using bad/illegal format or missing URL error
 * Created a more useful file to attach if there is a crash
+* Sent completed project over to Justin Heavilin
 
 
 ## TODO:

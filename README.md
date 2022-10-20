@@ -8,6 +8,8 @@ Center for Instructional Design and Innovation - Utah State University
 
 This repository contains the code necessary to generate a report showing student data from Canvas quiz attempts.
 
+_Note: This program has only been tested on Macs up to this point. If you want to use this on another OS, you are welcome to try it and if there are issues please follow the Bug Report instructions at the bottom of this page to indicate your interest in better support for other Operating Systems._
+
 ## Start here!
 In these instructions, I will walk you through the entire process of running this program to generate your course data.
 We will be running the program using the Command Line. When I give you a command to run, it will look like this:
