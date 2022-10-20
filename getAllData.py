@@ -34,14 +34,14 @@ quizData = os.popen(shellCommand)
 parsedData = json.loads(quizData.read())
 quizData.close()
 
-#allTheQuizzes = {}
+allTheQuizzes = {}
 
-#for x in range(0, len(parsedData)):
-    #allTheQuizzes[parsedData[x]["id"]] = parsedData[x]["title"]
+for x in range(0, len(parsedData)):
+    allTheQuizzes[parsedData[x]["id"]] = parsedData[x]["title"]
 #^^ real code to restore
 
 #test a limited amount of quizzes
-allTheQuizzes = {"1026596": "another one", "1026042": "problem child", "1026036": "test again"}
+#allTheQuizzes = {"1026596": "another one", "1026042": "problem child", "1026036": "test again"}
 
 def getAllQuizIDs():
     return allTheQuizzes
