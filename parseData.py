@@ -24,8 +24,6 @@ def getStudents(quizID, allTheStudents):
     f.write("")
     f.close()
 
-    print(f" quizID: {quizID}")
-    #print(f" resultOfAPICall2: {getAttemptData(quizID)}")
     resultOfAPICall2 = getAttemptData(quizID)
 
     from studentInfoAPICall import getStudentData

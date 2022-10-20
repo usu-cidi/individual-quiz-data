@@ -32,13 +32,9 @@ def getAttemptData(quizID):
     for student in quizBlocks:
         if (student["attempt"] != None):
             for attempt in range(0, student["attempt"]):
-                print(f"for attempt {attempt} in range 0,{student['attempt']}:")
-                requestURL = BASEURL + "/api/v1/courses/" + COURSE_ID + "/quizzes/" + quizID + "/submissions/" + str(
-                    student["id"]) + "\?attempt\=" + str(attempt + 1) + " \\"
+                requestURL = BASEURL + "/api/v1/courses/" + COURSE_ID + "/quizzes/" + quizID + "/submissions/" + str(student["id"]) + "\?attempt\=" + str(attempt + 1) + " \\"
 
-                shellCommand = f"curl {requestURL} \
-                      -X GET \
-                      -H 'Authorization: Bearer {TOKEN}'"
+                shellCommand = f"curl {requestURL}\n -X GET \\\n -H 'Authorization: Bearer {TOKEN}'"
 
                 oneAttempt = os.popen(shellCommand)
                 attemptData += oneAttempt.read()

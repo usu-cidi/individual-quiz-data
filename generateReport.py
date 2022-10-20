@@ -21,6 +21,13 @@ from parseData import getStudents
 
 quizIDs = getAllQuizIDs()
 
+def writeToReport(object, label):
+    f = open("contextReport.txt", "a")
+    f.write(f"{label}: {object}\n")
+    f.close()
+
+writeToReport(quizIDs, "QuizIDs")
+
 
 fields = ["Student", "ID", "SIS User ID", "SIS Login ID", "Email", "Quiz", "Score", "Attempt", "Time"]
 rows = []
@@ -28,21 +35,22 @@ rows = []
 allTheStudents = {}
 
 for quiz in quizIDs:
-    print(quiz)
-    print(f"quiz: {quiz}")
+    writeToReport(quiz, "On quiz")
     callResult = getStudents(str(quiz), allTheStudents)
     if callResult != None:
         students = callResult[0]
         allTheStudents = callResult[1]
         for student in students:
+            writeToReport(student, "On student")
             for attempt in range(0, students[student].getNumAttempts()):
+                writeToReport(attempt, "On attempt")
                 rowToAdd = [students[student].getName(), students[student].getCanvasID(),
                             students[student].getSisUser(), students[student].getSisLogin(),
                             students[student].getEmail(), quizIDs[quiz], students[student].getScore(attempt),
                             attempt + 1, students[student].getTimeSpent(attempt)]
                 rows.append(rowToAdd)
+                writeToReport(rowToAdd, "Row added")
 
-    print(f"Output: {rows}")
 
 outFile = "quizData.csv"
 
@@ -52,6 +60,7 @@ with open(outFile, "w") as csvfile:
     csvwriter.writerows(rows)
 
 os.remove("canvasData.txt")
+os.remove("contextReport.txt")
 
 os.system('open "quizData.csv"')
 

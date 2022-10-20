@@ -50,7 +50,7 @@ STUDENTS_IN_COURSE=upper-limit-of-students
 * token should be replaced with your personal API key. If you don't have one, see the bottom of this page.
 * course-id should be replaced with the id number for your course. It can be found by navigating to the home page of your course on canvas and copying the last part of the url:
   * For example, if your course URL is https://usu.instructure.com/courses/123456, 123456 is the course ID
-* upper-limit-of-students should be replaced with a rough estimate of number of students in your course. It is fine if it is greater than the number of students in the course, but should not be less.
+* upper-limit-of-students should be replaced with a number greater than the number of students in your course.
 
 * Once you have correctly filled in the text, press _CTRL + X_ on your keyboard, followed by the _y_ key, and then the enter key.
 
@@ -59,6 +59,17 @@ STUDENTS_IN_COURSE=upper-limit-of-students
 ```commandline
 pip3 install python-dotenv --user
 ```
+
+* _If you receive an error here that says something like:_
+```commandline
+xrun: error: invalid active developer path (/Library/Developer/CommandLineTools), missing xcrun at: /Library/Developer/CommandLineTools/usr/bin/xcrun
+```
+* _Run:_
+```commandline
+xcode-select --install
+```
+* _And try the previous command again._
+
 
 * Your environment has now been set up!
 
@@ -78,7 +89,7 @@ nano .env
 ```
 
 ## Bug Reports
-If something behaves unexpectedly or you run into a problem with the program, please let me know.
+If something behaves unexpectedly, or you run into a problem with the program, please let me know.
 
 Send bug reports to a02391851@usu.edu with the subject line "Bug Report - Individual Quiz Data".
 
@@ -86,6 +97,7 @@ Please include:
 * What you expected to happen
 * What actually happened
 * As much output from the terminal as possible - copy and pasted, not in a screenshot
+* Look in the cidi-individual-quiz-data-master folder and attach the canvasData.txt and contextReport.txt files if they've been created
 * Your course ID (and specific quiz ID, if applicable)
 * What OS you're using (Windows, Mac)
 * Any other information that you think could be useful
