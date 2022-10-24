@@ -99,7 +99,7 @@ Please include:
 * What you expected to happen
 * What actually happened
 * As much output from the terminal as possible - copy and pasted, not in a screenshot
-* Look in the cidi-individual-quiz-data-master folder and attach the canvasData.txt and contextReport.txt files if they've been created
+* Look in the cidi-individual-quiz-data-master folder. The files canvasData0000000.txt and contextReport0000000.txt may have been created (where 0000000 is a 7 digit number). Please attach these files to your bug report if they have been created. 
 * Your course ID (and specific quiz ID, if applicable)
 * What OS you're using (Windows, Mac)
 * Any other information that you think could be useful

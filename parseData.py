@@ -20,7 +20,7 @@ from mainAPICall import getAttemptData
 
 
 def getStudents(quizID, allTheStudents):
-    f = open("canvasData.txt", "w")
+    f = open("canvasData4737187.txt", "w")
     f.write("")
     f.close()
 
@@ -32,7 +32,7 @@ def getStudents(quizID, allTheStudents):
     resultOfAPICall3 = callResult[0]
     allTheStudents = callResult[1]
 
-    f = open("canvasData.txt", "w")
+    f = open("canvasData4737187.txt", "w")
     f.write("")
     f.close()
 

@@ -24,7 +24,7 @@ BASEURL = 'https://usu.instructure.com'
 
 
 def getStudentData(allTheStudents):
-    file = open("canvasData.txt")
+    file = open("canvasData4737187.txt")
     resultOfAPICall1 = file.read()
     file.close()
     parsedData1 = json.loads(resultOfAPICall1)

@@ -35,7 +35,7 @@ def getOneQuizData(quizID):
     parsedData = oneQuizData.read()
     oneQuizData.close()
 
-    f = open("canvasData.txt", "w")
+    f = open("canvasData4737187.txt", "w")
     f.write(parsedData)
     f.close()
 

@@ -13,8 +13,6 @@
 #     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 import os
-import sys
-import Student
 import csv
 from getAllData import getAllQuizIDs
 from parseData import getStudents
@@ -22,7 +20,7 @@ from parseData import getStudents
 quizIDs = getAllQuizIDs()
 
 def writeToReport(object, label):
-    f = open("contextReport.txt", "a")
+    f = open("contextReport8747525.txt", "a")
     f.write(f"{label}: {object}\n")
     f.close()
 
@@ -59,8 +57,8 @@ with open(outFile, "w") as csvfile:
     csvwriter.writerow(fields)
     csvwriter.writerows(rows)
 
-os.remove("canvasData.txt")
-os.remove("contextReport.txt")
+os.remove("canvasData4737187.txt")
+os.remove("contextReport8747525.txt")
 
 os.system('open "quizData.csv"')
 
