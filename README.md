@@ -27,6 +27,11 @@ Commands may or may not output text. Do not worry if some commands do not displa
 
 First you will need to get a copy of this project onto your computer.
 
+_If you have experience with git and GitHub, feel free to simply clone the project onto your computer in the normal way. Then skip to setting up your environment._
+
+_If you do not have experience with git/GitHub and would like to try cloning the project instead of downloading the project, follow the instructions in the Cloning a Repository section closer to the bottom of this page. 
+The benefit of this method is that as maintenance is performed on the program, you will be able to easily access the updated version of the project._
+
 * Navigate to the Launchpad and open the Terminal application on your computer.
 
 * On GitHub, click the green Code button. In the dropdown, click Download ZIP.
@@ -42,7 +47,7 @@ Now we need to set up your environment with your specific settings.
 nano .env
 ```
 
-  *  Your command line has now been turned into a simple text editor. Copy the text below and paste into the file, filling in your information.
+  *  Your command line has now been turned into a simple text editor. Copy the text below and paste into the file, replacing the filler text with your information.
   ```commandline
 CANVAS_API_TOKEN=token
 COURSE_ID=course-id
@@ -77,11 +82,11 @@ xcode-select --install
 
 Running the program:
 
-Run the following command:
+* Run the following command:
 ```commandline
 python3 generateReport.py
 ```
-* The program will now begin running. Depending on the amount of students and quizzes in your course, it may take a while because of all the neccesary API calls.
+* The program will now begin running. Depending on the amount of students and quizzes in your course, it may take a while because of all the necessary API calls.
   * My estimation is that it will take around .55 * (number of students * number of quizzes) seconds to run, depending on the number of attempts students are making on the quizzes
 * When the program is complete, the generated file should be opened in your default .csv application
 
@@ -89,6 +94,41 @@ If you would like to run the program again for a different course, repeat the ab
 ```commandline
 nano .env
 ```
+
+### Cloning a GitHub repository:
+* Run the following commands:
+```commandline
+cd Desktop
+```
+```commandline
+git clone https://github.com/elynn-usu/cidi-individual-quiz-data.git quiz-data-script
+```
+```commandline
+cd quiz-data-script
+```
+* _If you receive an error that says something like:_
+```commandline
+xrun: error: invalid active developer path (/Library/Developer/CommandLineTools), missing xcrun at: /Library/Developer/CommandLineTools/usr/bin/xcrun
+```
+* _Run:_
+```commandline
+xcode-select --install
+```
+* _And try the previous command again._
+
+You should now have a copy of the project on your computer. To get the latest changes before running the program in the future, run the following commands 
+(after opening a new terminal window):
+```commandline
+cd Desktop/quiz-data-script
+```
+```commandline
+git pull origin master
+```
+The project should update with any changes and bug fixes.
+
+_If you are having issues with cloning the project, feel free to go back and try downloading the zip as is instructed in the original instructions. You can also email me (a02391851@usu.edu) and I can help you set everything up if you would prefer._
+
+You can now return to the original instructions. Begin at the section on setting up your environment.
 
 ## Bug Reports
 If something behaves unexpectedly, or you run into a problem with the program, please let me know.
