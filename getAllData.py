@@ -20,10 +20,11 @@ dotenv.load_dotenv(dotenv.find_dotenv())
 
 TOKEN = os.environ.get('CANVAS_API_TOKEN')
 COURSE_ID = os.environ.get('COURSE_ID')
+NUM_QUIZZES = os.environ.get('NUM_QUIZZES_IN_COURSE')
 
 BASEURL = 'https://usu.instructure.com'
 
-REQUEST_URL = BASEURL + "/api/v1/courses/" + COURSE_ID + "/quizzes"
+REQUEST_URL = BASEURL + "/api/v1/courses/" + COURSE_ID + "/quizzes" + "?per_page=" + NUM_QUIZZES
 
 shellCommand = f"curl {REQUEST_URL} \
   -X GET \

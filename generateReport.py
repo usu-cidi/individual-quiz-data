@@ -58,7 +58,7 @@ with open(outFile, "w") as csvfile:
     csvwriter.writerows(rows)
 
 os.remove("canvasData4737187.txt")
-os.remove("contextReport8747525.txt")
+#os.remove("contextReport8747525.txt")
 
 os.system('open "quizData.csv"')
 

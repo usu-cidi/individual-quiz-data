@@ -51,13 +51,15 @@ nano .env
   ```commandline
 CANVAS_API_TOKEN=token
 COURSE_ID=course-id
-STUDENTS_IN_COURSE=upper-limit-of-students
+STUDENTS_IN_COURSE=[an upper limit of students]
+NUM_QUIZZES_IN_COURSE=[an upper limit of quizzes]
 ```
 
 * token should be replaced with your personal API key. If you don't have one, see the bottom of this page.
 * course-id should be replaced with the id number for your course. It can be found by navigating to the home page of your course on canvas and copying the last part of the url:
   * For example, if your course URL is https://usu.instructure.com/courses/123456, 123456 is the course ID
-* upper-limit-of-students should be replaced with a number greater than the number of students in your course.
+* [an upper limit of students] should be replaced with a number greater than the number of students in your course.
+* [an upper limit of quizzes] should be replaced with a number greater than the number of quizzes in your course.
 
 * Once you have correctly filled in the text, press _CTRL + X_ on your keyboard, followed by the _y_ key, and then the enter key.
 

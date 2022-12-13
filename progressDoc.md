@@ -252,6 +252,16 @@ Problem with 710410, crashed on quiz 1026042
 * Sent back to Neal to see if issue has been resolved on his end as well.
 * Everything worked for him, marking as resolved
 
+### RESOLVED: 1 - Quiz pagination error
+12.13.22
+Reported by Emma Lynn
+Course: 707871
+* Only giving data for first 10 quizzes
+Problem:
+* I forgot to add pagination for the quizzes, that's why it was limited to 10.
+* Made the respective changes in getAllData.py
+Marking as resolved
+
 
 
 ## Runtime optimization:
