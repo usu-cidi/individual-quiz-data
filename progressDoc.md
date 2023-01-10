@@ -217,6 +217,9 @@ My current estimation was a little off, a better one for this larger data would 
 * Created a more useful file to attach if there is a crash
 * Sent completed project over to Justin Heavilin
 
+### 12.10.23
+* Fixed rewriting report issue
+
 
 ## TODO:
 * Test on Windows/Linux
