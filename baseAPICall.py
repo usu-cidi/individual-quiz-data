@@ -25,9 +25,9 @@ BASEURL = 'https://usu.instructure.com'
 
 def getOneQuizData(quizID):
     f = open("contextReport8747525.txt", "w")
-    f.write(f"")
+    f.write("")
     f.close()
-    
+
     REQUEST_URL = BASEURL + "/api/v1/courses/" + COURSE_ID + "/quizzes/" + quizID + "/submissions" + "?per_page=" + STUDENTS_IN_COURSE
 
     shellCommand = f"curl {REQUEST_URL} \
